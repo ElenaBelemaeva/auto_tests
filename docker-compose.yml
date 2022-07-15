@@ -1,0 +1,9 @@
+version: '2.0'
+
+services:
+  ubuntu:
+    image: node
+    build:
+      context: .
+      dockerfile: dockerfile.CICD
+

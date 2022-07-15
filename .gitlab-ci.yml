@@ -1,0 +1,28 @@
+stages:
+  - test
+
+test:
+  image: gitlab/dind
+  services:
+    - docker:20.10.12-dind
+  #image: cypress/browsers:node12.14.1-chrome85-ff81
+  stage: test
+  script:
+    - ls
+    - touch .env 
+    - echo "BASE_URL_SVT= $BASE_URL_SVT" >> .env
+    - echo "BASE_URL_CY= $BASE_URL_CY" >> .env
+    - echo "LOGIN_SVT= $LOGIN_SVT" >> .env
+    - echo "PASSWORD_SVT= $PASSWORD_SVT" >> .env
+    - echo "LOGIN_CY= $LOGIN_CY" >> .env
+    - echo "PASSWORD_CY= $PASSWORD_CY" >> .env
+    - ls -lah 
+    - cat .env
+    - docker-compose -f docker-compose.yml up --build
+  #script:
+  #  - ls
+  #  - npx ci
+    # start the server in the background
+  #  - npx run start:ci &
+    # run Cypress tests
+  #  - npx cypress run

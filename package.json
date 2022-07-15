@@ -1,0 +1,29 @@
+{
+  "name": "cexbrocypress",
+  "version": "1.0.0",
+  "description": "E2E Framework Testing Cypress",
+  "main": "index.js",
+  "scripts": {
+    "cy:run:chrome": "cypress run --browser chrome",
+    "runHeadless": "./node_modules/.bin/cypress run --headless",
+    "cypress:open": "cypress open"
+  },
+  "keywords": [
+    "e2e",
+    "automation",
+    "framework",
+    "cypress"
+  ],
+  "author": "BroQa",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.6.1",
+    "cypress-keycloak": "^1.8.0",
+    "cypress-mochawesome-reporter": "^3.0.0",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "cypress-iframe": "^1.0.1",
+    "dotenv": "^16.0.1"
+  }
+}
